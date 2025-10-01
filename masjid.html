@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تبرع لبناء مسجد الأنصار - صدقة جارية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5e1a;
+            --secondary-color: #2d8b2d;
+            --accent-color: #f1c40f;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+        }
+        
+        /* قسم البطل */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('wpp.jpg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* قسم التبرع */
+        .donation-section {
+            padding: 3rem 0;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto;
+        }
+        
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .donation-option {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .donation-option:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+        
+        .donation-option h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .donation-option .amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+        }
+        
+        .donation-option p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        /* قسم معلومات المسجد */
+        .info-section {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .info-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            text-align: center;
+        }
+        
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            margin-bottom: 1rem;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details li i {
+            margin-left: 10px;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .qr-code {
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .qr-code img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        .qr-code p {
+            margin-top: 1rem;
+            color: var(--dark-color);
+            font-weight: bold;
+        }
+        
+        /* الفوتر */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0 1rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin-top: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* التجاوبية */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .info-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-mosque"></i>
+                    <h1>مسجد الأنصار</h1>
+                </div>
+                <div>
+                    <h2>مشروع بناء مسجد الأنصار</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>ساهم في بناء مسجد الأنصار صدقة جارية</h2>
+                <p>"مَنْ بَنَى مَسْجِدًا لِلَّهِ بَنَى اللَّهُ لَهُ بَيْتًا فِي الْجَنَّةِ"</p>
+                <a href="#donate" class="btn">تبرع الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التبرع -->
+    <section class="donation-section" id="donate">
+        <div class="container">
+            <h2 class="section-title">ساهم في بناء بيت الله</h2>
+            <div class="donation-options">
+                <div class="donation-option">
+                    <h3>لبنة في المسجد</h3>
+                    <div class="amount">5,000 د.ج</div>
+                    <p>ساهم بلبنة في بناء بيت الله وتكون لك صدقة جارية</p>
+                </div>
+                <div class="donation-option">
+                    <h3>ساهم في بناء عمود</h3>
+                    <div class="amount">50,000 د.ج</div>
+                    <p>ساهم في بناء عمود من أعمدة المسجد وتكون لك صدقة جارية</p>
+                </div>
+                <div class="donation-option">
+                    <h3>ساهم في بناء غرفة</h3>
+                    <div class="amount">500,000 د.ج</div>
+                    <p>ساهم في بناء غرفة للوضوء أو مكتبة وتكون لك صدقة جارية</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">يمكنك التبرع بأي مبلغ آخر حسب استطاعتك</p>
+                <a href="#info" class="btn">معلومات التبرع</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم معلومات المسجد -->
+    <section class="info-section" id="info">
+        <div class="container">
+            <h2 class="section-title">معلومات المسجد والاتصال</h2>
+            <div class="info-content">
+                <div class="contact-info">
+                    <h3>بيانات الاتصال</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الجزائر - ولاية الوادي - قمار - حي سيف النصر</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-tie"></i>
+                            <span>رئيس الجمعية: 0661723777</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>أمين المال: 0664181620</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-university"></i>
+                            <span>رقم الحساب البنكي: 00300400062020045</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="qr-code">
+                    <h3>مسح رمز التبرع</h3>
+                    <!-- هذا رمز QR افتراضي - يمكن استبداله برمز حقيقي -->
+                    <div style="background: white; padding: 20px; display: inline-block; border-radius: 10px;">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=مسجد الأنصار - الجزائر - ولاية الوادي - قمار - حي سيف النصر - رئيس الجمعية: 0661723777 - أمين المال: 0664181620 - رقم الحساب: 00300400062020045" alt="QR Code">
+                    </div>
+                    <p>مسح الرمز لعرض معلومات المسجد والاتصال</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>عن المشروع</h3>
+                    <p>مشروع مسجد الأنصار هو مبادرة خيرية تهدف إلى بناء مسجد متكامل يخدم المجتمع المحلي في بلدية قمار بولاية الوادي ويوفر مكاناً للعبادة والتعلم.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>فضل بناء المساجد</h3>
+                    <p>قال رسول الله ﷺ: "من بنى مسجدًا يبتغي به وجه الله بنى الله له بيتًا في الجنة" (رواه البخاري ومسلم)</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2023 مشروع مسجد الأنصار - قمار، ولاية الوادي، الجزائر</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // كود جافا سكريبت بسيط للتفاعل مع الصفحة
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if(this.getAttribute('href') === '#info') {
+                    alert('شكراً لرغبتك في التبرع. يرجى استخدام المعلومات الموجودة في صفحة "معلومات التبرع" للاتصال بنا أو تحويل التبرع.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
